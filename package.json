@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/david90103/nodejs-starter/issues"
   },
-  "homepage": "https://github.com/david90103/nodejs-starter#readme"
+  "homepage": "https://github.com/david90103/nodejs-starter#readme",
+  "dependencies": {
+    "express":"4.9.5",
+  }
 }

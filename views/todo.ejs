@@ -1,0 +1,31 @@
+<script type="text/javascript" src="/js/todo.js"></script>
+<link rel="stylesheet" href="/stylesheets/todo.css">
+
+<div id="myDIV" class="header">
+  <h2>User selection</h2>
+  <form class="well form-inline" action="/api/user/tasks" method="post">
+    <select name="id" id="user-select" class="form-control">
+      <% data.users.forEach(user => { %>
+        <option value="<%= user.id %>"><%= user.username %></option>
+      <% }); %>
+    </select>
+    <input type="submit" class="btn btn-primary" value="選取此使用者"/>
+  </form>
+  <h2>My To Do List</h2>
+  <input type="text" id="input-add-todo" placeholder="Title...">
+  <span onclick="addTask()" class="btn-add">Add</span>
+</div>
+
+<ul id="todo-list">
+  <% console.log('data.tasks=>', data.tasks) %>
+    <% !data.tasks ? '<p>No Job, Good Job!</p>' : data.tasks.forEach(task => { %>
+      <% if (task.done) { %>
+        <li class="todo checked" data-id="<%= task.id %>">
+      <% } else { %>
+        <li class="todo" data-id="<%= task.id %>">
+      <% } %>
+        <strong><%= task.title %></strong>
+      </li>
+    <% }); %>
+  </ul>
+</ul>

@@ -4,12 +4,7 @@
   "private": true,
   "main": "./bin/www",
   "scripts": {
-    "s": "nodemon ./bin/www localhost 8080",
-    "start": "nodemon ./bin/www localhost 8080",
-    "test": "npm run test-unit && npm run test-integration",
-    "test-unit": "cross-env NODE_ENV=test ./node_modules/.bin/mocha test/unit/*.test.js",
-    "test-integration": "cross-env NODE_ENV=test ./node_modules/.bin/mocha test/integration/*.test.js",
-    "production": "cross-env NODE_ENV=production node ./bin/www"
+    "start": "npm install -g n && npm start"
   },
   "dependencies": {
     "bluebird": "^3.5.1",
